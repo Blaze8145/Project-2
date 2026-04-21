@@ -18,7 +18,7 @@ email VARCHAR(320),
 age INT, gender CHAR(2), 
 version INT, 
 favorite VARCHAR(120), 
-feedback VARCHAR(255);)");
+feedback VARCHAR(255));");
 
 # Retrieved the hashed password as discussed in classes.
 # Password: CIS215php!
@@ -33,7 +33,7 @@ function validate(){
         return "Error: Incorrect Password.";
     }
     # Next, let's make sure everything was filled in:
-    if(($_POST["email-name"] == NULL) or ($_POST["age"] == NULL) or ($_POST["gender"] == "") or ($_POST["version"] == NULL) or ($_POST["favorite"] == NULL)){
+    if(($_POST["email-name"] == NULL) or ($_POST["age"] == NULL) or ($_POST["gender"] == "") or ($_POST["version"] == NULL) or ($_POST["favorite"] == NULL) or ($_POST["feedback"] == NULL)){
         return "Error: You have not filled in all questions.";
     }
     # Now, let's make sure the results make sense.
@@ -86,11 +86,17 @@ function validate(){
         return "Please enter a valid PHP Version.";
     }
 
-    # Favorite
+    # Feedback
     if(strlen($_POST["favorite"]) > 120){
         return "Please keep your character count below 120 for your favorite part of PHP.";
     }
+
+    # Feedback
+    if(strlen($_POST["feedback"]) > 255){
+        return "Please keep your character count below 255 for your feedback of the survey.";
+    }
     return "";
+    
 }
 
 /**
@@ -102,8 +108,9 @@ function sanitize(){
     $gender = htmlentities($_POST["gender"]);
     $version = (int)$_POST["version"];
     $favorite = htmlentities($_POST["favorite"]);
+    $feedback = htmlentities($_POST["feedback"]);
 
-    return array($email, $age, $gender, $version, $favorite);
+    return array($email, $age, $gender, $version, $favorite, $feedback);
 }
 
 /**
@@ -111,7 +118,7 @@ function sanitize(){
  */
 function add_data(){
     global $db;
-    $prep_insert = $db->prepare("INSERT INTO project_data (email, age, gender, version, favorite) values (?,?,?,?,?)");
+    $prep_insert = $db->prepare("INSERT INTO project_data (email, age, gender, version, favorite, feedback) values (?,?,?,?,?,?)");
     $prep_insert->execute(sanitize());
 }
 
