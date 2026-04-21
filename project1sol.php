@@ -49,9 +49,11 @@ for($i=13;$i<65;$i=$i + 5){
     <option value="gf">Genderfluid</option>
     <option value="ag">Agender</option>
     <option value="ot">Choose not to say/Other</option>
-    
-    <option id="otherBox" style="display: none;">Specify Gender:</option>
 </select>
+</div>
+<div id="otherBox" style="display: none;">
+    <label>Specify Gender: (Optional)</label>
+    <input type="text" name="other" id="other" maxlength="20"></input>
 </div>
 
 <div>
