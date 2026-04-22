@@ -1,3 +1,8 @@
+/*
+  Author: Julian Schrauger
+  Email: jschraug@genesee.edu
+*/
+
 //Other/Choose Not To Say Gender Button
 const otherBox = document.getElementById("otherBox");
 const other = document.getElementById("other");
