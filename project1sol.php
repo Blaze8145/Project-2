@@ -75,7 +75,7 @@ for($i=13;$i<65;$i=$i + 5){
         Please answer in 255 characters or fewer.
     </div>
     <label>What would you do to improve this survey?</label>
-    <input type="text" name="feedback" id="feedback" maxlength="255"></input>
+    <input type="text" name="feedback" id="feedback" maxlength="255" required></input>
 </div>
 
 <button type="submit" name="button-submit-form" id = "button-submit-form-id">Submit</button>
