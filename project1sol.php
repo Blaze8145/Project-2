@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Survey: PHP Questions</title>
+        <script src="project2.js"></script>
     </head>
 <body>
 

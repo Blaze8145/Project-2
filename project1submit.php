@@ -18,7 +18,8 @@ email VARCHAR(320),
 age INT, gender CHAR(2), 
 version INT, 
 favorite VARCHAR(120), 
-feedback VARCHAR(255));");
+feedback VARCHAR(255));
+genderOther VARCHAR(20)");
 
 # Retrieved the hashed password as discussed in classes.
 # Password: CIS215php!
@@ -79,7 +80,7 @@ function validate(){
         return "Please select a gender from the gender dropdown.";
     }
     #Other Gender
-    if ($_POST["gender"]=="OT"){
+    if ($_POST["gender"]=="ot"){
         if(strlen($_POST["other"]) > 20){
             return "Please keep your character count below 20 for your other Gender.";
     }
@@ -112,6 +113,7 @@ function sanitize(){
     $email = filter_var($_POST["email-name"], FILTER_VALIDATE_EMAIL);
     $age = (int)$_POST["age"];
     $gender = htmlentities($_POST["gender"]);
+    $genderOther = htmlentities($_POST["other"]);
     $version = (int)$_POST["version"];
     $favorite = htmlentities($_POST["favorite"]);
     $feedback = htmlentities($_POST["feedback"]);
@@ -124,7 +126,7 @@ function sanitize(){
  */
 function add_data(){
     global $db;
-    $prep_insert = $db->prepare("INSERT INTO project_data (email, age, gender, version, favorite, feedback) values (?,?,?,?,?,?)");
+    $prep_insert = $db->prepare("INSERT INTO project_data (email, age, gender, version, favorite, feedback,genderOther) values (?,?,?,?,?,?,?)");
     $prep_insert->execute(sanitize());
 }
 
