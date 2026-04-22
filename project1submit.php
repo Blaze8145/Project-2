@@ -17,9 +17,13 @@ $db->query("CREATE TABLE IF NOT EXISTS project_data (id INT PRIMARY KEY AUTO_INC
 email VARCHAR(320), 
 age INT, gender CHAR(2), 
 version INT, 
-favorite VARCHAR(120), 
-feedback VARCHAR(255));
-genderOther VARCHAR(20)");
+favorite VARCHAR(120)");
+//Feedback
+$feedbackEnter=$db->prepare("ALTER TABLE project_data ADD COLUMN IF NOT EXISTS feedback VARCHAR(255))");
+$feedbackEnter->execute();
+//Gender Other
+$genderOtherEnter=$db->prepare("ALTER TABLE project_data ADD COLUMN IF NOT EXISTS genderOther VARCHAR(20)");
+$genderOtherEnter->execute();
 
 # Retrieved the hashed password as discussed in classes.
 # Password: CIS215php!
@@ -118,7 +122,7 @@ function sanitize(){
     $favorite = htmlentities($_POST["favorite"]);
     $feedback = htmlentities($_POST["feedback"]);
 
-    return array($email, $age, $gender, $version, $favorite, $feedback);
+    return array($email, $age, $gender, $version, $favorite, $feedback, $genderOther);
 }
 
 /**
@@ -126,7 +130,7 @@ function sanitize(){
  */
 function add_data(){
     global $db;
-    $prep_insert = $db->prepare("INSERT INTO project_data (email, age, gender, version, favorite, feedback,genderOther) values (?,?,?,?,?,?,?)");
+    $prep_insert = $db->prepare("INSERT INTO project_data (email, age, gender, version, favorite, feedback, genderOther) values (?,?,?,?,?,?,?)");
     $prep_insert->execute(sanitize());
 }
 
