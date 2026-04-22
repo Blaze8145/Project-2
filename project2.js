@@ -8,3 +8,10 @@ otherBox.addEventListener("change", () => {
     otherBox.style.display = "none";
   }
 });
+
+//Feedback 50 before max
+if (remaining > 50){
+    var.innerText()
+} else {
+    var.innerText()
+}
