@@ -10,8 +10,14 @@ otherBox.addEventListener("change", () => {
 });
 
 //Feedback 50 before max
-if (remaining > 50){
-    var.innerText()
-} else {
-    var.innerText()
-}
+const response = document.getElementById("feedback");
+const charCount = document.getElementById("charCount");
+const max = 255;
+response.addEventListener("input", function(){
+  const remaining = max - response.value.length;
+  if (remaining <= 50){
+      charCount.innerText = "Characters Remaining:" + remaining;
+  } else {
+      charCount.innerText = "Please Answer in Under 255 Characters";
+  }
+});

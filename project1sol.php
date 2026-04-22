@@ -70,6 +70,9 @@ for($i=13;$i<65;$i=$i + 5){
 </div>
 
 <div>
+    <div id="charCount">
+        Please answer in 255 characters or fewer.
+    </div>
     <label>What would you do to improve this survey?</label>
     <input type="text" name="feedback" id="feedback" maxlength="255"></input>
 </div>
