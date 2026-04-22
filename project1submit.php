@@ -13,11 +13,7 @@
 require ('dbconfig.php');
 $db = connectDB();
 
-$db->query("CREATE TABLE IF NOT EXISTS project_data (id INT PRIMARY KEY AUTO_INCREMENT, 
-email VARCHAR(320), 
-age INT, gender CHAR(2), 
-version INT, 
-favorite VARCHAR(120)");
+$db->query("CREATE TABLE IF NOT EXISTS project_data (id INT PRIMARY KEY AUTO_INCREMENT, email VARCHAR(320), age INT, gender CHAR(2), version INT, favorite VARCHAR(120)");
 //Feedback
 $feedbackEnter=$db->prepare("ALTER TABLE project_data ADD COLUMN IF NOT EXISTS feedback VARCHAR(255))");
 $feedbackEnter->execute();
