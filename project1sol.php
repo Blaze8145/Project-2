@@ -2,13 +2,14 @@
 <html>
     <head>
         <title>Survey: PHP Questions</title>
+        <link rel="stylesheet" href="styles.css">
         <script src="project2.js"></script>
     </head>
 <body>
 
 <!-- Big takeaways: required keyword, make sure value is in there, feel free to use other attributes! -->
 
-<form action="project1submit.php" method="post" class="survey">
+<form id="surveyForm" action="project1submit.php" method="post" class="survey">
 
 <fieldset>
 
