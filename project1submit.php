@@ -76,8 +76,10 @@ function validate(){
     }
 
     # Gender
-    if(strlen($_POST["gender"]) != 2 && $_POST["gender"] == ""){
-        return "Please select a gender from the gender dropdown.";
+    if($_POST["gender"] == ""){
+        if(strlen($_POST["gender"]) != 2 ){
+            return "Please select a gender from the gender dropdown.";
+        }
     }
     #Other Gender
     if ($_POST["gender"]=="ot"){
