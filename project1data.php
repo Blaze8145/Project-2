@@ -85,7 +85,11 @@ function age_distribution(){
             $sum += $middle*$num; # add this n times where n is the number of people in this range
         }
     }
-    $average = $sum / $count;
+    if($count > 0){
+        $average = $sum / $count;
+    }else{
+        $average = 0;
+    }
     $age_array["A rough average"] = $average;
     $age_array["Number of people outside of this average"] = $othersCount;
     return $age_array;
