@@ -78,10 +78,11 @@ for($i=13;$i<65;$i=$i + 5){
     <input type="text" name="feedback" id="feedback" maxlength="255" required></input>
 </div>
 
+<script src="project2.js"></script>
 <button type="submit" name="button-submit-form" id = "button-submit-form-id">Submit</button>
 
 </form>
 
 <div><a href='project1data.php'>View data page here</a></div>
-<script src="project2.js"></script>
+
 </body></html>
