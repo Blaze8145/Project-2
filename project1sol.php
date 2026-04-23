@@ -3,7 +3,7 @@
     <head>
         <title>Survey: PHP Questions</title>
         <link rel="stylesheet" href="styles.css">
-        <script src="project2.js"></script>
+
     </head>
 <body>
 
@@ -83,5 +83,5 @@ for($i=13;$i<65;$i=$i + 5){
 </form>
 
 <div><a href='project1data.php'>View data page here</a></div>
-
+<script src="project2.js"></script>
 </body></html>
