@@ -4,16 +4,14 @@
 */
 
 //Other/Choose Not To Say Gender Button
-document.addEventListener("DOMContentLoaded", function(){
-  const otherBox = document.getElementById("otherBox");
-  const other = document.getElementById("other");
-  other.addEventListener("change", function(){
-    if(otherBox.value==="ot"){
-      otherBox.style.display = "block";
-    } else {
-      otherBox.style.display = "none";
-    }
-  });
+const otherBox = document.getElementById("otherBox");
+const gender = document.getElementById("gender");
+gender.addEventListener("change", function(){
+if(gender.value==="ot"){
+  otherBox.style.display = "block";
+} else {
+  otherBox.style.display = "none";
+}
 });
 
 //Feedback 50 before max
