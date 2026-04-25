@@ -4,6 +4,7 @@
 */
 
 //Other/Choose Not To Say Gender Button
+//Sprint 2
 const otherBox = document.getElementById("otherBox");
 const gender = document.getElementById("gender");
 gender.addEventListener("change", function(){
@@ -15,6 +16,7 @@ if(gender.value==="ot"){
 });
 
 //Feedback 50 before max
+//Sprint 2
 const response = document.getElementById("feedback");
 const charCount = document.getElementById("charCount");
 const max = 255;
@@ -28,6 +30,7 @@ response.addEventListener("input", function(){
 });
 
 //Submit Check
+//Submit Check checks the submit button then changes any question that doesn't have a value to a red border and stops the submit
 let form = document.getElementById("surveyForm");
 form.addEventListener("submit", function(event){
   const valid = true;
@@ -70,6 +73,6 @@ form.addEventListener("submit", function(event){
     valid = false;
   }
   if (!valid) {
-        event.preventDefault();
-    }
+    event.preventDefault();
+  }
 });
