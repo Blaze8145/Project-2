@@ -70,7 +70,7 @@ for($i=13;$i<65;$i=$i + 5){
     <input type=text name="favorite" id="favorite" required></label>
 </div>
 
-<!-- Added A Feedback Question the is 255 characters long to provide a resonable amount of leyway for answers. Didn't add it to data page because feedback sould be just for the website owner/coder -->
+<!-- Added A Feedback Question the is 255 characters long to provide a reasonable amount of leeway for answers. Didn't add it to data page because feedback should be just for the website owner/coder -->
 <div>
     <div id="charCount">
         Please answer in 255 characters or fewer.
@@ -78,7 +78,7 @@ for($i=13;$i<65;$i=$i + 5){
     <label>What would you do to improve this survey?</label>
     <input type="text" name="feedback" id="feedback" maxlength="255" required></input>
 </div>
-
+<!-- External Javascipt Handles this questions put at the end for questions that require something to be changed  -->
 <script src="project2.js"></script>
 <button type="submit" name="button-submit-form" id = "button-submit-form-id">Submit</button>
 

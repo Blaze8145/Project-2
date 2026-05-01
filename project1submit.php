@@ -17,17 +17,17 @@ $db = connectDB();
 $db->query("CREATE TABLE IF NOT EXISTS project_data (id INT PRIMARY KEY AUTO_INCREMENT, email VARCHAR(320), age INT, gender CHAR(2), version INT, favorite VARCHAR(120));");
 //Feedback
 //It would be very easy to add more questions to this survey by adding more columns a div in the form with the type of question and to validate it.
-//The type of question doesn't really change I would say that multiple radio buttons would be the harest that we could do for the survey
-$feedbackEnter=$db->prepare("ALTER TABLE project_data ADD COLUMN IF NOT EXISTS feedback VARCHAR(255)");
+//The type of question doesn't really change I would say that multiple radio buttons would be the hardest that we could do for the survey
+$feedbackEnter=$db->prepare("ALTER TABLE project_data ADD COLUMN feedback VARCHAR(255)");
 $feedbackEnter->execute();
 //Gender Other
 //This prepare statement allows the other box table to be in the SQL
-$genderOtherEnter=$db->prepare("ALTER TABLE project_data ADD COLUMN IF NOT EXISTS genderOther VARCHAR(20)");
+$genderOtherEnter=$db->prepare("ALTER TABLE project_data ADD COLUMN genderOther VARCHAR(20)");
 $genderOtherEnter->execute();
 
 # Retrieved the hashed password as discussed in classes.
 # Password: CIS215php!
-//This hash password is used to incrept the oniginal password CIS215php!
+//This hash password is used to encrypt the original password CIS215php!
 $hashed_pass = '$2y$10$ViIleDzZvM5nXXfScjwGz.D4GH.CqNabTJ9uoIqydR5.SjmzWuxNi';
 /**
  * Validate returns an empty string if there were no errors, and a message about the worst error if there was one in validation.
