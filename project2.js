@@ -51,7 +51,7 @@ response.addEventListener("input", function(){
 let form = document.getElementById("surveyForm");
 //This eventlistener checks only when the form is submited with the submit button.
 form.addEventListener("submit", function(event){
-  const valid = true;
+  let valid = true;
 
 //Assigns a variable to each question to check and highlight is on is empty.
   const email =document.getElementById("email-id");
