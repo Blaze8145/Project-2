@@ -18,11 +18,11 @@ $db->query("CREATE TABLE IF NOT EXISTS project_data (id INT PRIMARY KEY AUTO_INC
 //Feedback
 //It would be very easy to add more questions to this survey by adding more columns a div in the form with the type of question and to validate it.
 //The type of question doesn't really change I would say that multiple radio buttons would be the hardest that we could do for the survey
-$feedbackEnter=$db->prepare("ALTER TABLE project_data ADD COLUMN feedback VARCHAR(255)");
+$feedbackEnter=$db->prepare("ALTER TABLE project_data ADD COLUMN IF NOT EXISTS feedback VARCHAR(255)");
 $feedbackEnter->execute();
 //Gender Other
 //This prepare statement allows the other box table to be in the SQL
-$genderOtherEnter=$db->prepare("ALTER TABLE project_data ADD COLUMN genderOther VARCHAR(20)");
+$genderOtherEnter=$db->prepare("ALTER TABLE project_data ADD COLUMN IF NOT EXISTS genderOther VARCHAR(20)");
 $genderOtherEnter->execute();
 
 # Retrieved the hashed password as discussed in classes.
