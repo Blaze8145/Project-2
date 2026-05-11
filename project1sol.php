@@ -63,9 +63,9 @@ for($i=13;$i<65;$i=$i + 5){
 </div>
 
 <div>
-    <div>
+    <!--<div>
         Please answer in 120 characters or fewer.
-    </div>
+    </div>-->
     <label> What is your favorite part of PHP?     
     <input type=text name="favorite" id="favorite" required></label>
 </div>
